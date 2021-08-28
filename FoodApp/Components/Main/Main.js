@@ -1,5 +1,12 @@
 import React from "react";
-import { Image, StyleSheet, View, Text, Button } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  View,
+  Text,
+  Button,
+  Dimensions,
+} from "react-native";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -56,8 +63,18 @@ export default function Main({ navigation }) {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />}
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#34B089",
+        },
+        headerTitle: (props) => <Header {...props} />,
+      }}
     >
-      <Drawer.Screen name="Shop" component={Shop} />
+      <Drawer.Screen
+        name="Shop"
+        component={Shop}
+        options={{ headerShown: false }}
+      />
       <Drawer.Screen name="OrderHistory" component={OrderHistory} />
       <Drawer.Screen name="ChangeInfo" component={ChangeInfo} />
     </Drawer.Navigator>

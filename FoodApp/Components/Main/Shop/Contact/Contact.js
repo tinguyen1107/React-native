@@ -1,23 +1,24 @@
-import React from 'react';
-import {
-    View,
-    Text,
-    StyleSheet
-} from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
-export default function Contact () {
-    return (
-        <View style={styles.container}>
-            <Text>Contact View</Text>
-        </View>
-    )
+import Header from "../../Header";
+
+export default function Contact({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Header navigation={navigation} />
+      <View style={styles.container}>
+        <Text>Contact View</Text>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-  
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
