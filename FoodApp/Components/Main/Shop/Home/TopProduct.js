@@ -7,7 +7,7 @@ function ProductContainer(props) {
   return (
     <View
       style={{
-        width: width / 2.6 + 10,
+        width: width / 2.52 + 10,
         backgroundColor: "#FFF",
         shadowColor: "#2E272B",
         shadowOffset: { width: 0, height: 3 },
@@ -20,12 +20,12 @@ function ProductContainer(props) {
       <Image
         style={{
           flex: 3,
-          width: width / 2.6,
-          height: ((width / 2.6) * 452) / 361,
+          width: width / 2.52,
+          height: ((width / 2.52) * 452) / 361,
           margin: 5,
           borderRadius: 3,
         }}
-        source={require("../../../../assets/images/temp/sp1.jpeg")}
+        source={props.image}
       />
       <View style={{ flex: 1, marginLeft: 5, marginBottom: 5 }}>
         <Text
@@ -55,13 +55,19 @@ function TopProduct(props) {
         style={{
           flexDirection: "row",
           flexWrap: "wrap",
-          justifyContent: "center",
+          justifyContent: "space-between",
         }}
       >
-        <ProductContainer name="Pinky Dress" price="400$" />
-        <ProductContainer name="Pinky Dress" price="400$" />
-        <ProductContainer name="Pinky Dress" price="400$" />
-        <ProductContainer name="Pinky Dress" price="400$" />
+        {props.data.map((item, index) => {
+          return (
+            <ProductContainer
+              key={index}
+              name={item[0]}
+              price={item[1]}
+              image={item[2]}
+            />
+          );
+        })}
       </View>
     </View>
   );

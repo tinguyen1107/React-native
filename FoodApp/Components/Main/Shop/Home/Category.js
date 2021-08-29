@@ -22,7 +22,41 @@ function Category(props) {
       <View
         style={{ flex: 6, alignItems: "center", padding: 10, paddingTop: 0 }}
       >
-        <Swiper style={swiper} showsButtons={false}>
+        <Swiper
+          style={swiper}
+          showsButtons={false}
+          dot={
+            <View
+              style={{
+                backgroundColor: "#D9D9D9",
+                width: 4,
+                height: 4,
+                borderRadius: 4,
+                marginLeft: 3,
+                marginRight: 3,
+                marginTop: 3,
+                marginBottom: 3,
+              }}
+            />
+          }
+          activeDot={
+            <View
+              style={{
+                backgroundColor: "#34B089",
+                width: 5,
+                height: 5,
+                borderRadius: 4,
+                marginLeft: 3,
+                marginRight: 3,
+                marginTop: 3,
+                marginBottom: 3,
+              }}
+            />
+          }
+          paginationStyle={{
+            bottom: 5,
+          }}
+        >
           {props.image.map((item, index) => {
             return (
               <View key={index}>
@@ -60,15 +94,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  slide: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#92BBD9",
-    borderRadius: 5,
-  },
   text: {
-    color: "#92BBD9",
+    color: "#34B089",
     fontSize: 19,
     fontWeight: "bold",
   },
