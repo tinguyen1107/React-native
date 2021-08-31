@@ -18,6 +18,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Shop from "./Shop/Shop";
 import ChangeInfo from "../ChangeInfo/ChangeInfo";
 import OrderHistory from "../OrderHistory/OrderHistory";
+import Authentication from "../Authentication/Authentication";
 
 const Drawer = createDrawerNavigator();
 const { width } = Dimensions.get("window");
@@ -42,7 +43,7 @@ export default function Main({ navigation }) {
                 marginTop: 5,
                 marginRight: 5,
               }}
-              source={require("../../assets/favicon.png")}
+              source={require("../../../assets/favicon.png")}
             />
             <View style={{ justifyContent: "center" }}>
               <Text
@@ -85,7 +86,7 @@ export default function Main({ navigation }) {
               props.navigation.navigate("Shop");
             }}
             style={{
-              backgroundColor: "#FFF",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
             }}
           />
           <DrawerItem
@@ -97,7 +98,7 @@ export default function Main({ navigation }) {
               props.navigation.navigate("OrderHistory");
             }}
             style={{
-              backgroundColor: "#FFF",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
             }}
           />
           <DrawerItem
@@ -109,7 +110,7 @@ export default function Main({ navigation }) {
               props.navigation.navigate("ChangeInfo");
             }}
             style={{
-              backgroundColor: "#FFF",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
             }}
           />
           <DrawerItem
@@ -119,7 +120,7 @@ export default function Main({ navigation }) {
             label="Help"
             onPress={() => alert("Link to help")}
             style={{
-              backgroundColor: "#FFF",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
             }}
           />
           <View
@@ -134,9 +135,11 @@ export default function Main({ navigation }) {
               <Icon name="exit-to-app" color={color} size={size} />
             )}
             label="Sign Out"
-            onPress={() => navigation.navigate("Authentication")}
+            onPress={() => {
+              props.navigation.navigate("Authentication");
+            }}
             style={{
-              backgroundColor: "#FFF",
+              backgroundColor: "rgba(255, 255, 255, 0.65)",
             }}
           />
         </DrawerContentScrollView>
@@ -156,7 +159,7 @@ export default function Main({ navigation }) {
       >
         <View style={{ alignItems: "center" }}>
           <Image
-            source={require("../../assets/images/temp/profile.png")}
+            source={require("../../../assets/images/temp/profile.png")}
             style={{ width: width / 2, height: width / 2 }}
           />
           <TouchableOpacity
@@ -248,6 +251,11 @@ export default function Main({ navigation }) {
       <Drawer.Screen
         name="ChangeInfo"
         component={ChangeInfo}
+        options={{ headerShown: false }}
+      />
+      <Drawer.Screen
+        name="Authentication"
+        component={Authentication}
         options={{ headerShown: false }}
       />
     </Drawer.Navigator>

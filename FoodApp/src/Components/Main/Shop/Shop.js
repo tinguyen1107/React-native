@@ -7,14 +7,14 @@ import Cart from "./Cart/Cart";
 import Search from "./Search/Search";
 import Contact from "./Contact/Contact";
 
-import homeIconS from "../../../assets/images/appIcon/home.png";
-import homeIcon from "../../../assets/images/appIcon/home0.png";
-import cartIconS from "../../../assets/images/appIcon/cart.png";
-import cartIcon from "../../../assets/images/appIcon/cart0.png";
-import searchIconS from "../../../assets/images/appIcon/search.png";
-import searchIcon from "../../../assets/images/appIcon/search0.png";
-import contactIconS from "../../../assets/images/appIcon/contact.png";
-import contactIcon from "../../../assets/images/appIcon/contact0.png";
+import homeIconS from "../../../../assets/images/appIcon/home.png";
+import homeIcon from "../../../../assets/images/appIcon/home0.png";
+import cartIconS from "../../../../assets/images/appIcon/cart.png";
+import cartIcon from "../../../../assets/images/appIcon/cart0.png";
+import searchIconS from "../../../../assets/images/appIcon/search.png";
+import searchIcon from "../../../../assets/images/appIcon/search0.png";
+import contactIconS from "../../../../assets/images/appIcon/contact.png";
+import contactIcon from "../../../../assets/images/appIcon/contact0.png";
 
 const Tab = createBottomTabNavigator();
 

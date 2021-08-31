@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
@@ -7,7 +14,7 @@ function ProductContainer(props) {
   return (
     <View
       style={{
-        width: width / 2.52 + 10,
+        width: (width - 60) / 2,
         backgroundColor: "#FFF",
         shadowColor: "#2E272B",
         shadowOffset: { width: 0, height: 3 },
@@ -20,10 +27,11 @@ function ProductContainer(props) {
       <Image
         style={{
           flex: 3,
-          width: width / 2.52,
-          height: ((width / 2.52) * 452) / 361,
-          margin: 5,
-          borderRadius: 3,
+          width: (width - 60) / 2,
+          height: (((width - 60) / 2) * 452) / 361,
+          marginBottom: 5,
+          borderTopLeftRadius: 5,
+          borderTopRightRadius: 5,
         }}
         source={props.image}
       />
@@ -60,12 +68,18 @@ function TopProduct(props) {
       >
         {props.data.map((item, index) => {
           return (
-            <ProductContainer
+            <TouchableOpacity
               key={index}
-              name={item[0]}
-              price={item[1]}
-              image={item[2]}
-            />
+              onPress={() => {
+                props.navigation.navigate("ProductDetail", { item: item });
+              }}
+            >
+              <ProductContainer
+                name={item[0]}
+                price={item[1]}
+                image={item[2]}
+              />
+            </TouchableOpacity>
           );
         })}
       </View>
@@ -76,7 +90,7 @@ function TopProduct(props) {
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: "#FFF",
-    width: width * 0.95,
+    width: width - 20,
     margin: 10,
     shadowColor: "#2E272B",
     shadowOffset: { width: 0, height: 3 },

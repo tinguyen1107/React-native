@@ -3,12 +3,12 @@ import { View, Text, StyleSheet } from "react-native";
 
 import Header from "../../Header";
 
-export default function Contact({ navigation }) {
+export default function Cart({ navigation }) {
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
       <View style={styles.container}>
-        <Text>Contact View</Text>
+        <Text>Cart View</Text>
       </View>
     </View>
   );
@@ -21,4 +21,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-

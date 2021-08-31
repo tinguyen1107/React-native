@@ -8,10 +8,10 @@ import colors from "./assets/colors/colors";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Authentication from "./Components/Authentication/Authentication";
-import ChangeInfo from "./Components/ChangeInfo/ChangeInfo";
-import Main from "./Components/Main/Main";
-import OrderHistory from "./Components/OrderHistory/OrderHistory";
+import Main from "./src/Components/Main/Main";
+import OrderHistory from "./src/Components/OrderHistory/OrderHistory";
+
+import ProductDetail from "./src/Components/Product/ProductDetail";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,19 +35,14 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Authentication"
-          component={Authentication}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="ChangeInfo"
-          component={ChangeInfo}
-          options={{ headerShown: true }}
-        />
-        <Stack.Screen
-          name="OrderHistory"
+          name="ProductList"
           component={OrderHistory}
           options={{ headerShown: true }}
+        />
+        <Stack.Screen
+          name="ProductDetail"
+          component={ProductDetail}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
