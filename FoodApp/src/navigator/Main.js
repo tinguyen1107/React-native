@@ -15,10 +15,10 @@ import {
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-import Shop from "./Shop/Shop";
-import ChangeInfo from "../ChangeInfo/ChangeInfo";
-import OrderHistory from "../OrderHistory/OrderHistory";
-import Authentication from "../Authentication/Authentication";
+import {favicon, profile } from "../../assets/index";
+
+import Shop from "./Shop";
+import { OrderHistory, ChangeInfo, Authentication } from "../screens/index";
 
 const Drawer = createDrawerNavigator();
 const { width } = Dimensions.get("window");
@@ -43,7 +43,7 @@ export default function Main({ navigation }) {
                 marginTop: 5,
                 marginRight: 5,
               }}
-              source={require("../../../assets/favicon.png")}
+              source={favicon}
             />
             <View style={{ justifyContent: "center" }}>
               <Text
@@ -159,7 +159,7 @@ export default function Main({ navigation }) {
       >
         <View style={{ alignItems: "center" }}>
           <Image
-            source={require("../../../assets/images/temp/profile.png")}
+            source={profile}
             style={{ width: width / 2, height: width / 2 }}
           />
           <TouchableOpacity

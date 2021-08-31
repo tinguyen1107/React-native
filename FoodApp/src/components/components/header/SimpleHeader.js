@@ -22,13 +22,10 @@ export default function SimpleHeader(props) {
             marginLeft: 15,
           }}
           onPress={() => {
-            props.navigation.toggleDrawer();
+            props.onPress();
           }}
         >
-          <Image
-            style={{ width: 25, height: 25 }}
-            source={require("../../assets/images/appIcon/ic_menu.png")}
-          />
+          <Image style={{ width: 25, height: 25 }} source={props.image} />
         </TouchableOpacity>
       </View>
       <Text

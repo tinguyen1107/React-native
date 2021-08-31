@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import Header from "../../Header";
+import { Header } from "../../components/index";
 
 export default function Cart({ navigation }) {
   return (

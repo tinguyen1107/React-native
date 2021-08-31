@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import Header from "../../Header";
+import { Header } from "../../components/index";
 
-export default function Contact({ navigation }) {
+export default function Search({ navigation }) {
   return (
     <View style={styles.container}>
       <Header navigation={navigation} />
       <View style={styles.container}>
-        <Text>Contact View</Text>
+        <Text>Search View</Text>
       </View>
     </View>
   );
@@ -21,3 +21,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+

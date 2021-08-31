@@ -10,6 +10,8 @@ import {
   Dimensions,
 } from "react-native";
 
+import { back_left_white, logo } from "../../../assets/index";
+
 const { width } = Dimensions.get("window");
 
 export default function Authentication({ navigation }) {
@@ -93,14 +95,14 @@ export default function Authentication({ navigation }) {
           }}
         >
           <Image
-            source={require("../../../assets/images/appIcon/back_white.png")}
+            source={back_left_white}
             style={image}
           />
         </TouchableOpacity>
         <Text style={title}>Wearing a Dress</Text>
         <Image
           style={image}
-          source={require("../../../assets/images/appIcon/ic_logo.png")}
+          source={logo}
         />
       </View>
 

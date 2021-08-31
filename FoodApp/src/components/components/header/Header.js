@@ -10,6 +10,8 @@ import {
   TextInput,
 } from "react-native";
 
+import { menu, logo } from "../../../../assets/index";
+
 const { width } = Dimensions.get("window");
 
 function Header(props) {
@@ -27,13 +29,13 @@ function Header(props) {
           >
             <Image
               style={icon}
-              source={require("../../../assets/images/appIcon/ic_menu.png")}
+              source={menu}
             />
           </TouchableOpacity>
           <Text style={title}>Wearing a Dress</Text>
           <Image
             style={icon}
-            source={require("../../../assets/images/appIcon/ic_logo.png")}
+            source={logo}
           />
         </View>
         <View>
